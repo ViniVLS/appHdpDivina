@@ -1,0 +1,25 @@
+
+  <br><br><br>
+  <div class="ui-g" >
+    <div class="ui-g-12 ui-fluid">
+  <p-dataTable [style]="{'font-size':'50px'}"  [value]="painel">
+    <p-header>Pacientes em atendimento</p-header>
+
+    <p-column    field="classificacao" header="Classificação"  >
+      <ng-template let-car="rowData" pTemplate="body">
+        <div [ngClass] ="{'verde':car.classificacao=='Verde' , 'amarelo' :car.classificacao=='Amarelo', 'azul' :car.classificacao=='Azul'} "> 
+<span style="margin-left: 55px;">{{car.classificacao}}</span>
+
+        </div>
+
+    </ng-template>
+
+    </p-column>
+    <p-column field="total" header="Pacientes"   ></p-column>
+    <p-column  field="tempo" header="Tempo Previsto"   >
+    </p-column>
+
+
+</p-dataTable>
+    </div>
+  </div>

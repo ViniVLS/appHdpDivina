@@ -1,0 +1,155 @@
+<div class="container">
+
+  <div><h1>Indicador Flash</h1></div>
+  <div  class="ui-g">
+      <div class="ui-g-12 uiui-fluid">
+          <p-selectButton [options]="cities1" (onChange)="alteraFlash()" [(ngModel)]="tipo"></p-selectButton>
+ </div>
+</div>
+  <div  class="ui-g">
+    <div class="ui-g-12 ui-fluid">
+
+      <p-dataTable *ngIf="cti"  [value]="flashdt.box"  [responsive] ="true" emptyMessage="Nenhum registro encontrado ">
+
+        <p-header ><span>Centro Terapia Int. Adulto</span></p-header>
+          <p-column field="cd_UNIDADE" [style]="{'font-size':'13px'}"header="Leito"   ></p-column>
+          <p-column field="paciente" [style]="{'font-size':'13px'}"header="Paciente"  ></p-column>
+          <p-column field="ds_CONVENIO" [style]="{'font-size':'13px'}"header="Convênio"  ></p-column>
+          <p-column field="ds_CLINICA" [style]="{'font-size':'13px'}"header="Clínica"  ></p-column>
+          <p-column field="dt_ENTRADA_UNIDADE" [style]="{'font-size':'13px'}"header="Dt. Entrada"  ></p-column>
+          <p-column field="qt_DIA_PERMAN_UNID"[style]="{'font-size':'13px'}" header="Qt dias perm"   ></p-column>
+          <p-column field="saps"[style]="{'font-size':'13px'}" header="Saps"  ></p-column>
+
+
+
+
+
+
+      </p-dataTable>
+
+    </div>
+    </div>
+
+
+    <div  class="ui-g">
+        <div class="ui-g-12 ui-fluid">
+
+          <p-dataTable *ngIf="cti"  [value]="flashdt.cti"  [responsive] ="true" emptyMessage="Nenhum registro encontrado ">
+
+            <p-header><span>Centro Terapia Int. Cirúrgica</span></p-header>
+              <p-column field="cd_UNIDADE" [style]="{'font-size':'13px'}"header="Leito"   ></p-column>
+              <p-column field="paciente" [style]="{'font-size':'13px'}"header="Paciente"  ></p-column>
+              <p-column field="ds_CONVENIO" [style]="{'font-size':'13px'}"header="Convênio"  ></p-column>
+              <p-column field="ds_CLINICA" [style]="{'font-size':'13px'}"header="Clínica"  ></p-column>
+              <p-column field="dt_ENTRADA_UNIDADE" [style]="{'font-size':'13px'}"header="Dt. Entrada"  ></p-column>
+              <p-column field="qt_DIA_PERMAN_UNID"[style]="{'font-size':'13px'}" header="Qt dias perm"   ></p-column>
+              <p-column field="saps"[style]="{'font-size':'13px'}" header="Saps"  ></p-column>
+
+
+
+
+
+          </p-dataTable>
+
+        </div>
+        </div>
+
+   <div class="ui-g">
+      <div class="ui-g-12 ui-fluid">
+
+        <p-dataTable *ngIf="cti" [value]="flash"  [responsive] ="true" emptyMessage="Nenhum registro encontrado ">
+
+            <p-column field="ds_setor_atendimento" [style]="{'font-size':'13px'}"header="Setor"   ></p-column>
+            <p-column field="total_Leitos" [style]="{'font-size':'13px'}"header="Total leitos"  ></p-column>
+            <p-column field="ocup"[style]="{'font-size':'13px'}" header="Ocupados"  ></p-column>
+            <p-column field="disp" [style]="{'font-size':'13px'}"header="Disponíveis"  ></p-column>
+            <p-column field="livre"[style]="{'font-size':'13px'}" header="Livres"   ></p-column>
+            <p-column field="tx_ocup" [style]="{'font-size':'13px'}"header="Taxa ocupação"   ></p-column>
+            <p-column field="sPS3_Regs"[style]="{'font-size':'13px'}" header="SPS3 realizados"  ></p-column>
+            <p-column field="sPS3_Media"[style]="{'font-size':'13px'}" header="SPS3 média"  ></p-column>
+            <p-column field="reg" [style]="{'font-size':'13px'}"header="Reserva leito"  ></p-column>
+
+
+
+        </p-dataTable>
+
+      </div>
+      </div>
+
+      <div  class="ui-g">
+          <div class="ui-g-12 ui-fluid">
+
+            <p-dataTable  *ngIf="!cti" [value]="flashdt.box"  [responsive] ="true" emptyMessage="Nenhum registro encontrado ">
+
+                <p-header><span>1º Unidade de Internação</span></p-header>
+                <p-column field="cd_UNIDADE" [style]="{'font-size':'13px'}"header="Leito"   ></p-column>
+                <p-column field="paciente" [style]="{'font-size':'13px'}"header="Paciente"  ></p-column>
+                <p-column field="ds_CONVENIO"[style]="{'font-size':'13px'}" header="Convênio"  ></p-column>
+                <p-column field="nm_guerra" [style]="{'font-size':'13px'}"header="Médico"  ></p-column>
+                <p-column field="dt_ENTRADA_UNIDADE" [style]="{'font-size':'13px'}"header="Dt. Entrada"  ></p-column>
+                <p-column field="reinternacao" [style]="{'font-size':'13px'}"header="Reinternação"   ></p-column>
+                <p-column field="horas" [style]="{'font-size':'13px'}"header="Horas"  ></p-column>
+                <p-column field="nr_ATENDIMENTO" [style]="{'font-size':'13px'}"header="Atendimento"  ></p-column>
+                <p-column field="diag" [style]="{'font-size':'13px'}"header="Diagnóstico"  ></p-column>
+
+
+
+
+            </p-dataTable>
+
+          </div>
+          </div>
+
+
+ <div  class="ui-g">
+    <div class="ui-g-12 ui-fluid">
+
+      <p-dataTable  *ngIf="!cti" [value]="flashdt.cti"  [responsive] ="true" emptyMessage="Nenhum registro encontrado ">
+
+          <p-header><span>1º Centro Terapia Intensiva</span></p-header>
+          <p-column field="cd_UNIDADE" [style]="{'font-size':'13px'}"header="Leito"   ></p-column>
+          <p-column field="paciente" [style]="{'font-size':'13px'}"header="Paciente"  ></p-column>
+          <p-column field="ds_CONVENIO"[style]="{'font-size':'13px'}" header="Convênio"  ></p-column>
+          <p-column field="nm_guerra" [style]="{'font-size':'13px'}"header="Médico"  ></p-column>
+          <p-column field="dt_ENTRADA_UNIDADE" [style]="{'font-size':'13px'}"header="Dt. Entrada"  ></p-column>
+          <p-column field="reinternacao" [style]="{'font-size':'13px'}"header="Reinternação"   ></p-column>
+          <p-column field="horas" [style]="{'font-size':'13px'}"header="Horas"  ></p-column>
+          <p-column field="nr_ATENDIMENTO" [style]="{'font-size':'13px'}"header="Atendimento"  ></p-column>
+          <p-column field="diag" [style]="{'font-size':'13px'}"header="Diagnóstico"  ></p-column>
+
+
+
+
+      </p-dataTable>
+
+    </div>
+    </div>
+         <div class="ui-g">
+            <div class="ui-g-12 ui-fluid">
+
+              <p-dataTable *ngIf="!cti" [value]="flash"  [responsive] ="true" emptyMessage="Nenhum registro encontrado ">
+
+                  <p-column field="ds_setor_atendimento"  [style]="{'font-size':'13px'}"header="Setor"   ></p-column>
+                  <p-column field="total_Leitos" [style]="{'font-size':'13px'}"header="Total leitos"  ></p-column>
+                  <p-column field="ocup" [style]="{'font-size':'13px'}"header="Ocupados"  ></p-column>
+                  <p-column field="disp" [style]="{'font-size':'13px'}"header="Disponíveis"  ></p-column>
+                  <p-column field="livre" [style]="{'font-size':'13px'}"header="Livres"   ></p-column>
+                  <p-column field="higien" [style]="{'font-size':'13px'}"header="Higienização"   ></p-column>
+                  <p-column field="reserva" [style]="{'font-size':'13px'}"header="Reserva"   ></p-column>
+                  <p-column field="interded"[style]="{'font-size':'13px'}" header="Interditado"   ></p-column>
+                  <p-column field="tx_ocup" [style]="{'font-size':'13px'}"header="Taxa ocupação"   ></p-column>
+                  <p-column field="reg" [style]="{'font-size':'13px'}"header="Reserva leito"  ></p-column>
+
+
+
+              </p-dataTable>
+
+            </div>
+            </div>
+            <div *ngIf="show">
+                <p-progressSpinner
+                [style]="{ width:'100px',
+                height:'100px',  position:'absolute', top:'40%', left:'40%'}" fill="#EEEEEE" strokeWidth="4" animationDuration=".5s">
+              </p-progressSpinner>
+              </div>
+      </div>

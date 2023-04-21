@@ -1,0 +1,180 @@
+<div class="container">
+
+  <div><h1>Ocupação Hospitalar</h1></div>
+    <div style="margin-left: 10px;">Posição {{ocupacao.atualizacao}}</div>
+
+   <div class="ui-g">
+      <div class="ui-g-12 ui-fluid">
+
+        <p-dataTable [value]="ocupacaoTotal"  [style]="{'font-size':'13px'}"  [responsive] ="true" emptyMessage=" ">
+            <p-header>Ocupação Geral</p-header>
+            <p-column field="txocup" header="Taxa ocupação"   ></p-column>
+            <p-column field="txocupop" header="Taxa Ocup.Op"   ></p-column>
+            <p-column field="leitoop" header="Leitos operacionais"  ></p-column>
+            <p-column field="ocup" header="Leitos ocupados"  ></p-column>
+            <p-column field="livre" header="Leitos livres"  ></p-column>
+            <p-column field="higien" header="Leitos em hig"   ></p-column>
+            <p-column field="reserva" header="Leitos reservados"   ></p-column>
+            <p-column field="interd" header="Leitos interditados"  ></p-column>
+            <p-column field="ocup_TEMP" header="Temp. ocupados"  ></p-column>
+            
+
+
+
+        </p-dataTable>
+
+      </div>
+      </div>
+      <hr class="linha"/>
+<div class="ui-g">
+<div class="ui-g-12 ui-fluid">
+
+  <p-dataTable [value]="ocupacao.ocupacaoUI"  [style]="{'font-size':'13px'}" [responsive] ="true" emptyMessage=" ">
+      <p-header>Ocupação UI</p-header>
+      <p-column field="ds_SETOR_ATENDIMENTO" header="Setor"  ></p-column>
+      <p-column field="txocup" header="Taxa ocupação"   ></p-column>
+      <p-column field="txocupop" header="Taxa Ocup.Op"   ></p-column>
+      <p-column field="leitoop" header="Leitos operacionais"  ></p-column>
+      <p-column field="ocup" header="Leitos ocupados"  ></p-column>
+      <p-column field="livre" header="Leitos livres"  ></p-column>
+      <p-column field="higien" header="Leitos em hig"   ></p-column>
+      <p-column field="reserva" header="Leitos reservados"   ></p-column>
+      <p-column field="interd" header="Leitos interditados"  ></p-column>
+      <p-column [style]="{'width':'80px'}" >
+      <ng-template let-lanc="rowData" pTemplate="body">
+
+          <a pButton  icon="fa fa-search-plus" pTooltip="Ver mais"
+          tooltipPosition="top"
+          [routerLink]="['/setor', lanc.cd_SETOR_ATENDIMENTO]"></a>
+
+      </ng-template>
+      </p-column>
+     </p-dataTable>
+
+</div>
+</div>
+ <hr class="linha"/>
+
+<div class="ui-g">
+    <div class="ui-g-12 ui-fluid">
+
+      <p-dataTable [value]="ocupacao.ocupacaoCTI" [style]="{'font-size':'13px'}"  [responsive] ="true" emptyMessage=" ">
+          <p-header>Ocupação CTI</p-header>
+          <p-column field="ds_SETOR_ATENDIMENTO" header="Setor"  ></p-column>
+      <p-column field="txocup" header="Taxa ocupação"   ></p-column>
+      <p-column field="txocupop" header="Taxa Ocup.Op"   ></p-column>
+      <p-column field="leitoop" header="Leitos operacionais"  ></p-column>
+      <p-column field="ocup" header="Leitos ocupados"  ></p-column>
+      <p-column field="livre" header="Leitos livres"  ></p-column>
+      <p-column field="higien" header="Leitos em hig"   ></p-column>
+      <p-column field="reserva" header="Leitos reservados"   ></p-column>
+      <p-column field="interd" header="Leitos interditados"  ></p-column>
+      <p-column [style]="{'width':'80px'}" >
+          <ng-template let-lanc="rowData" pTemplate="body">
+
+              <a pButton  icon="fa fa-search-plus" pTooltip="Ver mais"
+              tooltipPosition="top"
+              [routerLink]="['/setor', lanc.cd_SETOR_ATENDIMENTO]"></a>
+
+          </ng-template>
+          </p-column>
+
+      </p-dataTable>
+
+    </div>
+    </div>
+    <hr class="linha"/>
+    <div class="ui-g">
+        <div class="ui-g-12 ui-fluid">
+
+          <p-dataTable [value]="ocupacao.ocupacaoNEO" [style]="{'font-size':'13px'}"  [responsive] ="true" emptyMessage=" ">
+              <p-header>Ocupação NEO</p-header>
+              <p-column field="ds_SETOR_ATENDIMENTO" header="Setor"  ></p-column>
+      <p-column field="txocup" header="Taxa ocupação"   ></p-column>
+      <p-column field="txocupop" header="Taxa Ocup.Op"   ></p-column>
+      <p-column field="leitoop" header="Leitos operacionais"  ></p-column>
+      <p-column field="ocup" header="Leitos ocupados"  ></p-column>
+      <p-column field="livre" header="Leitos livres"  ></p-column>
+      <p-column field="higien" header="Leitos em hig"   ></p-column>
+      <p-column field="reserva" header="Leitos reservados"   ></p-column>
+      <p-column field="interd" header="Leitos interditados"  ></p-column>
+      <p-column [style]="{'width':'80px'}" >
+          <ng-template let-lanc="rowData" pTemplate="body">
+
+              <a pButton  icon="fa fa-search-plus" pTooltip="Ver mais"
+              tooltipPosition="top"
+              [routerLink]="['/setor', lanc.cd_SETOR_ATENDIMENTO]"></a>
+
+          </ng-template>
+          </p-column>
+
+          </p-dataTable>
+
+        </div>
+        </div>
+        <hr class="linha"/>
+        <div class="ui-g">
+            <div class="ui-g-12 ui-fluid">
+
+              <p-dataTable [value]="ocupacao.ocupacaoEM" [style]="{'font-size':'13px'}"  [responsive] ="true" emptyMessage=" ">
+                  <p-header>Ocupação Emergência</p-header>
+                  <p-column field="ds_SETOR_ATENDIMENTO" header="Setor"  ></p-column>
+                 <p-column field="ocup" header="Leitos ocupados"  ></p-column>
+                 <p-column  [style]="{'width':'80px'}" >
+                    <ng-template let-lanc="rowData" pTemplate="body">
+
+                        <a pButton  icon="fa fa-search-plus" pTooltip="Ver mais"
+                        tooltipPosition="top"
+                        [routerLink]="['/setor', lanc.cd_SETOR_ATENDIMENTO]"></a>
+
+                    </ng-template>
+                    </p-column>
+
+
+
+              </p-dataTable>
+
+            </div>
+            </div>
+            <hr class="linha"/>
+            <div class="ui-g">
+                <div class="ui-g-12 ui-fluid">
+
+                  <p-dataTable [value]="ocupacao.ocupacaoSR" [style]="{'font-size':'13px'}"  [responsive] ="true" emptyMessage=" ">
+                      <p-header>Ocupação SR</p-header>
+                      <p-column field="ds_SETOR_ATENDIMENTO" header="Setor"  ></p-column>
+                    <p-column field="ocup" header="Leitos ocupados"  ></p-column>
+
+                    <p-column [style]="{'width':'80px'}">
+                        <ng-template let-lanc="rowData" pTemplate="body">
+
+                            <a pButton  icon="fa fa-search-plus" pTooltip="Ver mais"
+                            tooltipPosition="top"
+
+                            [routerLink]="['/setor', lanc.cd_SETOR_ATENDIMENTO]"></a>
+
+                        </ng-template>
+                        </p-column>
+
+
+                  </p-dataTable>
+
+                </div>
+                </div>
+                <hr class="linha"/>
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-fluid">
+
+                      <p-dataTable [value]="ocupacao.ocupacaoOUT" [style]="{'font-size':'13px'}"  [responsive] ="true" emptyMessage=" ">
+                          <p-header>Ocupação Outros</p-header>
+                          <p-column field="ds_SETOR_ATENDIMENTO" header="Setor"  ></p-column>
+                         <p-column field="ocup" header="Leitos ocupados"  ></p-column>
+
+
+
+                      </p-dataTable>
+
+                    </div>
+                    </div>
+
+</div>

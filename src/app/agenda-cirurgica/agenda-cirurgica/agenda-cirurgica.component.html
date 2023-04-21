@@ -1,0 +1,78 @@
+<div class="container">
+  <div><h1>Painel Cirúrgico </h1></div>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+        <p-calendar [(ngModel)]="dt" showButtonBar="true" [showIcon]="true" [yearNavigator]="true" yearRange="2010:2030" dateFormat="dd/mm/yy"
+        [locale]="pt_BR"   (onSelect)="consultaAgenda()"></p-calendar>
+    </div>
+  </div>
+
+
+  <div class="ui-g">
+   
+
+    <div class="ui-g-6 ui-md-3 painel" (click)="filtro('T')">
+      <p-card> 
+        <div class="overview-box-content">
+          <i class="fa fa-chevron-down fa-2x "></i>
+         </div>
+        <div class="overview-box-title">Agendado</div>
+       <div class="divcard">{{totagenda}}</div>
+    </p-card>
+
+    </div>
+    <div class="ui-g-6 ui-md-3 painel" (click)="filtro('A')">
+      <p-card>
+        <div class="overview-box-content">
+          <i class="fa fa-chevron-down fa-2x "></i>
+         </div>
+        <div class="overview-box-title">Autorizadas</div>
+       <div class="divcard">{{totaut}}</div>
+    </p-card>
+
+    </div>
+    <div class="ui-g-6 ui-md-3 painel" (click)="filtro('OPME')">
+      <p-card>
+        <div class="overview-box-content">
+          <i class="fa fa-chevron-down fa-2x "></i>
+         </div>
+        <div class="overview-box-title">Com OPME</div>
+       <div class="divcard">{{totopme}}</div>
+    </p-card>
+
+    </div>
+    <div class="ui-g-6 ui-md-3 painel" (click)="filtro('I')">
+      <p-card>
+        <div class="overview-box-content">
+          <i class="fa fa-chevron-down fa-2x "></i>
+         </div>
+        <div class="overview-box-title">Tipo Internado</div>
+       <div class="divcard">{{totint}}</div>
+    </p-card>
+
+    </div>
+  </div>
+  <div class="ui-g">
+    <div class="ui-g-12 ui-fluid" style="padding-top: 30px;">
+      <div class="ui-widget-header" style="padding:4px 5px;border-bottom: 0 none">
+        <i class="fa fa-search" style="margin:5px 5px 0 0"></i>
+        <input #gbx type="text" pInputText size="20" placeholder="Filtrar">
+    </div>
+        <p-dataTable [value]="agenda"  [responsive]="true" 
+         [globalFilter]="gbx"
+        loadingIcon="fa-circle-o-notch fa-3x"
+        emptyMessage="Nenhum agendamento encontrado">
+           
+            
+          <p-column field="dia" header="Data"></p-column>
+            <p-column field="paciente" header="Paciente"></p-column>
+            <p-column field="convenio" header="Convênio"></p-column>
+            <p-column field="procedimento" header="Procedimento"></p-column>
+            <p-column field="medico" header="Médico"></p-column>
+
+        </p-dataTable>
+    </div>
+  </div>
+
+</div>

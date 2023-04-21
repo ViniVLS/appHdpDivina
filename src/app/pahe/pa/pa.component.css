@@ -1,0 +1,37 @@
+.red {
+	width: 80px;
+	height: 78px;
+	border-radius: 50%;
+	overflow: hidden;
+	float: left;
+    background-color:  rgb(233, 122, 122);
+   
+
+}
+.amarelo {
+	width: 80px;
+	height: 78px;
+	border-radius: 50%;
+	overflow: hidden;
+	float: left;
+    background-color:  rgb(233, 226, 122);
+    align-items: center;
+   
+
+}
+
+
+.x {
+	width: 80px;
+	height: 78px;
+	border-radius: 50%;
+	overflow: hidden;
+	float: left;
+
+    align-items: center;
+   
+
+}
+.t{
+    font-size: 13px;
+   }

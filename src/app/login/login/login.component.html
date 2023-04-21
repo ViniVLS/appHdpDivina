@@ -1,0 +1,47 @@
+<form #loginForm="ngForm" autocomplete="on" (ngSubmit)="login(loginForm)" >
+<div class="teste">
+<div style="max-width: 400px; margin: auto">
+
+
+        <div class="ui-g ui-fluid ">
+          <div class="ui-g-12 login-form" >
+
+          <div class="ui-g-12">
+
+            <h1>Login</h1>
+
+          </div>
+
+          <div class="ui-g-12">
+              <div class="ui-inputgroup">
+
+<span class="ui-inputgroup-addon">
+    <i class="fa fa-user-md"></i></span>
+
+    <input name="usuario" type="text" pInputText placeholder="E-mail" ngModel>
+
+              </div>
+          </div>
+
+          <div class="ui-g-12">
+              <div class="ui-inputgroup">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-lock"></i></span>
+                  <input name="senha" type="password" pInputText placeholder="Senha" ngModel>
+              </div>
+              <div> <a routerLink="/forgot" style="float:right;">Esqueceu sua senha?</a></div>
+          </div>
+
+          <div class="ui-g-12">
+
+            <button pButton type="submit" label="Login" ></button>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

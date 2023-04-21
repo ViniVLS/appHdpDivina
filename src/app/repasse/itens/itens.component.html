@@ -1,0 +1,43 @@
+<div class="container">
+    <div><h1>Repasses {{nrrepasse}}</h1></div>
+  <div class="ui-g">
+  <div class="ui-g-12 ui-fluid">
+
+      <p-dataTable [value]="repasseitem"  [responsive] ="true" emptyMessage="Nenhum repasse encontrado">
+          <p-column field="ID" header="Atendimento/item"></p-column>
+          <p-column field="paciente" header="Paciente/item"></p-column>
+          <p-column field="convenio" header="Convênio"></p-column>
+          <p-column field="item" header="Item"></p-column>
+          <p-column field="vl_repasse" header="Vl repasse">
+              <ng-template let-lanc="rowData" pTemplate="body">
+                  <span >R$ {{ lanc.vl_repasse | number:'1.2-2' }}</span>
+                </ng-template>
+          </p-column>
+          <p-column field="vl_glosado" header="Vl glosado">
+              <ng-template let-lanc="rowData" pTemplate="body">
+                  <span >R$ {{ lanc.vl_glosado | number:'1.2-2' }}</span>
+                </ng-template>
+          </p-column>
+
+          <p-column field="vl_liberado" header="Vl liberado">
+              <ng-template let-lanc="rowData" pTemplate="body">
+                  <span >R$ {{ lanc.vl_liberado | number:'1.2-2' }}</span>
+                </ng-template>
+
+        </p-column>
+
+
+
+
+      </p-dataTable>
+
+  </div>
+
+  </div>
+
+  <div *ngIf="show">
+
+  <p-progressSpinner    [style]="{ width:'100px',
+    height:'100px',  position:'absolute', top:'40%', left:'40%'}" fill="#EEEEEE" strokeWidth="4" animationDuration=".5s"></p-progressSpinner>
+   </div>
+  </div>

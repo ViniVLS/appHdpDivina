@@ -1,0 +1,36 @@
+.login-form {
+	margin-top: 50vh;
+	padding: 15px 30px;
+	background-color: rgba(59, 57, 57, 0.288);
+	color: #FFF;
+
+	transform: translateY(-50%);
+}
+
+.login-form h1 {
+	margin: 0 0 5px;
+}
+
+.login-form h2 {
+	margin: 0 0 30px;
+	font-size: 1em;
+}
+@media (min-width: 980px){
+  .teste {
+    min-height: 100vh;
+    background-color: #CCC;
+    background-image: url('https://app.divinaprovidencia.org.br/app/assets/img/fundox.jpg');
+    background-size: 100% 100%;
+  }
+
+
+  }@media (min-width: 100px){
+    .teste {
+      min-height: 100vh;
+      background-color: #CCC;
+      background-image: url('https://app.divinaprovidencia.org.br/app/assets/img/fundo.jpg');
+      background-size: 100% 100%;
+    }
+
+
+      }

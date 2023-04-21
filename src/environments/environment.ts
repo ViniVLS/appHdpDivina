@@ -5,4 +5,6 @@
 
 export const environment = {
   production: false
+  //tokenWhitLlistedDomains :[ /app.divinaprovidencia.org.br/ ],
+  //tokenBlackListedRoutes: [/\/oauth\/token/]
 };

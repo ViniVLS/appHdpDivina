@@ -1,0 +1,23 @@
+.navbarx {
+
+  top: 0;
+  background-color: #1e94d2;
+  position: fixed;
+ padding: 20px;
+  width:100%;
+  z-index: 9998;
+
+
+
+
+  }
+  .titulo{
+
+    text-transform: uppercase;
+    font-family: "Montserrat",sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+
+  }
+

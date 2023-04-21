@@ -1,0 +1,71 @@
+<div class="container">
+  <div><h1>Repasses</h1></div>
+
+  <div  class="ui-g">
+    <div class="ui-g-12 uiui-fluid">
+        <p-selectButton [options]="label" (onChange)="alteraFlash()" [(ngModel)]="tipo"></p-selectButton>
+</div>
+</div>
+
+<div class="ui-g">
+<div class="ui-g-12 ui-fluid">
+
+  <div  *ngIf="x">
+
+    <p-dataTable [value]="repasse"  [responsive] ="true" emptyMessage="Nenhum repasse encontrado">
+        <p-column field="nr_REPASSE_TERCEIRO" header="Repasse"></p-column>
+        <p-column field="dt_MESANO_REFERENCIA" header="Data"></p-column>
+        <p-column field="vl_LIQUIDO" header="Valor">
+            <ng-template let-lanc="rowData" pTemplate="body">
+                <span >R$ {{ lanc.vl_LIQUIDO | number:'1.2-2' }}</span>
+              </ng-template>
+
+      </p-column>
+        <p-column styleClass="col-acoes">
+          <ng-template let-lanc="rowData" pTemplate="body">
+            <a pButton icon="fa fa-search-plus" pTooltip="Detalhar"
+            [routerLink]="['/repasse/itens/', lanc.nr_REPASSE_TERCEIRO]"
+              tooltipPosition="top"
+              ></a>
+
+
+          </ng-template>
+
+      </p-column>
+
+    </p-dataTable>
+  </div>
+ <div  *ngIf="y">
+
+    <div class="ui-widget-header" style="padding:4px 5px;border-bottom: 0 none">
+      <i class="fa fa-search" style="margin:5px 5px 0 0"></i>
+      <input #gb type="text" pInputText size="20" placeholder="Filtrar">
+  </div>
+    <p-dataTable #dt [value]="repassepd"  [responsive] ="true" [paginator]="true" [rows]="30"  [globalFilter]="gb" >
+        
+  
+      <p-column field="nratendimento" header="Atendimento"></p-column>
+      <p-column field="nmpaciente" header="Paciente"></p-column>
+      <p-column field="ds_convenio" header="Convênio"></p-column>
+      <p-column field="item" header="Item"></p-column>
+      <p-column field="vlpendente" header="Valor">
+          <ng-template let-lanc="rowData" pTemplate="body">
+              <span >R$ {{ lanc.vlpendente | number:'1.2-2' }}</span>
+            </ng-template>
+
+    </p-column>
+    <p-column field="nrrepasse" header="Repasse"></p-column>
+  
+    </p-dataTable>
+  </div>
+
+</div>
+
+</div>
+
+<div *ngIf="show">
+
+<p-progressSpinner    [style]="{ width:'100px',
+  height:'100px',  position:'absolute', top:'40%', left:'40%'}" fill="#EEEEEE" strokeWidth="4" animationDuration=".5s"></p-progressSpinner>
+ </div>
+</div>

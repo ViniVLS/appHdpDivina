@@ -1,0 +1,46 @@
+<div class="container">
+  <div><h1>Pacientes internados para a Equipe</h1></div>
+<div class="ui-g">
+<div class="ui-g-12 ui-fluid">
+
+    <p-dataTable [value]="paciente"  [responsive] ="true" emptyMessage="Nenhum paciente internado">
+
+      <p-column field="nm_paciente" header="Paciente" bodyStyleClass=""  >
+      <ng-template let-col let-car="rowData" let-ri="rowIndex" pTemplate="body">
+        <div [ngClass]="{xxx : !(car.ds_risco ==='0')}" >
+        <span >{{car.nm_paciente}}</span>
+      </div>
+         </ng-template>
+        </p-column>
+        <p-column field="cd_UNIDADE" header="Leito"></p-column>
+        <p-column field="dt_PREVISTO_ALTA" header="Previsão de alta">
+          <ng-template let-col let-car="rowData" let-ri="rowIndex" pTemplate="body">
+            <span  >{{car.dt_PREVISTO_ALTA | date: 'dd/MM/yyyy'}}</span>
+           </ng-template>
+      </p-column>
+        <p-column styleClass="col-acoes">
+          <ng-template let-lanc="rowData" pTemplate="body">
+              <a pButton  icon="fa fa-search-plus" pTooltip="Detalhar"
+              tooltipPosition="top"
+              [routerLink]="['/resumo', lanc.nr_atendimento]"
+              [ngClass]="{'ui-button-danger': !(lanc.ds_risco ==='0')}"
+              ></a>
+
+
+
+          </ng-template>
+
+      </p-column>
+
+    </p-dataTable>
+
+</div>
+
+</div>
+
+<div *ngIf="show">
+
+<p-progressSpinner    [style]="{ width:'100px',
+  height:'100px',  position:'absolute', top:'40%', left:'40%'}" fill="#EEEEEE" strokeWidth="4" animationDuration=".5s"></p-progressSpinner>
+ </div>
+</div>

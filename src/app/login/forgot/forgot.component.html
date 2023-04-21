@@ -1,0 +1,47 @@
+
+<nav class="navbarx">
+  <div><span class="titulo">REDE DE SAÚDE DIVINA PROVIDÊNCIA</span></div>
+</nav>
+<form #forgotForm="ngForm" (ngSubmit)="solicita(forgotForm)" >
+<div class="container">
+
+      <h1>Solicitação de senha</h1>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12">
+
+          <p-panel header="Solicite uma nova senha" >
+            <div class="ui-g ui-fluid x">
+              <div class="ui-g-6">
+
+                  <span class="ui-float-label">
+                      <input id="float-input" type="text" size="10"   ng-required="Erro"  maxlength="20" ngModel name="cpf" pInputText>
+                      <label for="float-input">CPF</label>
+                  </span>
+
+              </div>
+
+              <div class="ui-g-10">
+                  <span class="ui-float-label">
+                      <input id="float-input" type="text" size="30" required   ngModel name="email" pInputText>
+                      <label for="float-input">E-mail</label>
+
+                  </span>
+
+            </div>
+
+            <p-captcha siteKey="6LdS4E0UAAAAAM3QdKA8w31R5JeE_v-t5z712J_F" (onResponse)="showResponse($event)"></p-captcha>
+            </div>
+
+            <br>
+            <button pButton [disabled]="teste" type="submit" label="Solicitar nova senha" ></button>
+
+          </p-panel>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+</form>

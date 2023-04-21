@@ -1,1 +1,119 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    color: #404c51;
+    margin: 0;
+
+
+
+}
+
+label {
+    font-weight: bold;
+}
+.ui-dropdown-filter-container {
+  width: 100%;
+}
+@media (min-width: 1200px){
+.container {
+    width: 1170px;
+    margin: 0 auto;
+
+}
+
+
+}@media (min-width: 100px){
+    .container {
+
+        margin-top: 60px; ;
+
+    }
+
+
+    }
+
+
+.col-valor{
+    width: 120px;
+    text-align: right;
+
+}
+.col-data{
+    width: 120px;
+    text-align: center;
+}
+.col-acoes{
+    width: 90px;
+    text-align: center ;
+}
+.col-acoesx{
+    width: 180px;
+    text-align: center ;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+h1 {
+   padding: 5px;
+
+    }
+    .ui-widget-headerx{
+      background: #1a9cdd;
+}
+.col-acoes {
+  width:80px;
+  text-align: center;
+}
+.xxx{
+  border-color: inherit;
+  box-sizing: border-box;
+  padding: .25em .5em;
+  border-width: 1px;
+  border-style: solid;
+  background-color:#d9534f;
+  color: aliceblue;
+  margin-top: 10px;
+}
+
+header .ui-button {
+    FONT-WEIGHT: 100;
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+    text-decoration: none !important;
+    cursor: pointer;
+    text-align: center;
+    zoom: 1;
+    overflow: visible;
+    width: 60px;
+    margin: 2px;
+}
+.ui-button-icon-only .ui-button-text, .ui-button-text-empty .ui-button-text {
+    padding: .0429em;
+    text-indent: -9999999px;
+}
+.ui-calendar-button {
+    height: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 2em;
+    border-left: 0 none;
+    padding: 3.3px;
+}
+.overview-box-title{
+    font-size: 20px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.ui-card{
+    background-color: rgb(169, 177, 202);
+}
+xx{
+
+background-color: #337ab7;
+
+
+}

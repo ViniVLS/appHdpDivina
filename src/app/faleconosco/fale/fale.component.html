@@ -1,0 +1,62 @@
+<div class="container">
+
+  <div><h1>Fale conosco</h1></div>
+  <div class="ui-g">
+      <div class="ui-g-12 ui-fluid">
+
+          <p-editor [(ngModel)]="text" [style]="{'font-size':'20px'}">
+              <p-header>
+                  <span class="ql-formats">
+                      <button class="ql-bold" aria-label="Bold"></button>
+                      <button class="ql-italic" aria-label="Italic"></button>
+                      <button class="ql-underline" aria-label="Underline"></button>
+                      <button aria-label="Ordered List" class="ql-list" value="ordered" type="button"></button>
+
+                  </span>
+              </p-header>
+            </p-editor>
+<div>
+
+</div>
+<button pButton type="submit" (click)="teste()" label="Enviar" ></button>
+
+
+<div class="ui-g">
+<div class="ui-g-12 ui-fluid">
+<br>
+
+
+    <p-dataTable [value]="comunicado"  [responsive] ="true"
+    emptyMessage="Nenhuma solicitação encontrada">
+        <p-header>Comunicações realizadas</p-header>
+        <p-column field="data" header="Data">
+        <ng-template let-col let-car="rowData" let-ri="rowIndex" pTemplate="body">
+          <span>{{car.data | date: 'dd/MM/yyyy'}}</span>
+      </ng-template>
+    </p-column>
+        <p-column field="ds_status" header="Status"></p-column>
+        <p-column styleClass="col-acoes">
+            <ng-template let-lanc="rowData" pTemplate="body">
+              <a pButton icon="fa fa-search-plus" pTooltip="Detalhar"
+                tooltipPosition="top"
+                [routerLink]="['/comunicacao', lanc.id]"></a>
+            </ng-template>
+        </p-column>
+
+
+      </p-dataTable>
+
+
+</div>
+
+</div>
+
+<div *ngIf="show">
+
+<p-progressSpinner    [style]="{ width:'100px',
+  height:'100px',  position:'absolute', top:'40%', left:'40%'}" fill="#EEEEEE" strokeWidth="4" animationDuration=".5s"></p-progressSpinner>
+ </div>
+
+
+
+</div>

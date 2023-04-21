@@ -1,0 +1,98 @@
+<div class="container">
+
+  <p-dataView #dv  [value]="car" [paginator]="true" [rows]="10" paginatorPosition="both" filterBy="municipio,nratendimento,paciente,convenio">
+      <p-header>
+          <span><B>Pacientes em atendimento</B></span><br/><br/>
+          <span>Tempo do cadastro  ao médico</span>
+          <li style="margin-right: 10%;">Tempo médio(1h): {{tempoh}} minutos</li>
+          <li style="margin-right: 10%;">Tempo medio(24h): {{tempod}} minutos</li>
+       <div class="ui-helper-clearfix">
+           <div class="ui-g">
+               <div class="ui-g-12 ui-md-4">
+                  
+               </div>
+               <div class="ui-g-6 ui-md-4 filter-container">
+                   <div style="position:relative">
+                      <input type="search" pInputText placeholder="Buscar" (keyup)="dv.filter($event.target.value)">
+                   </div>
+                   
+               </div>
+               <div class="ui-g-6 ui-md-2" style="text-align:right">
+              
+                      
+                   
+
+               </div>
+           </div>
+       </div>
+   </p-header>
+   <ng-template let-car pTemplate="listItem">
+       <div class="ui-g" style="padding: 1em;border-bottom: 1px solid #d9d9d9;" >
+           <div class="ui-g-12 ui-md-3 circulo " [ngClass] ="{'red':car.cor=='red' , 'amarelo' :car.cor=='amarelo', 'x' :car.cor=='x'} "  style="text-align:center" >
+                   <img src="assets/img/{{car.ie_sexo}}.png" width="60">
+             <div ><br/>{{car.paciente}}</div> 
+               
+           </div>
+       
+           <div class="ui-g-12 ui-md-8 car-details" >
+               <div class="ui-g" >
+                <div class="ui-g-2 ui-sm-6 t">Paciente: </div>
+                <div class="ui-g-10 ui-sm-6 t"><b>{{car.paciente}}</b></div>
+                <div class="ui-g-2 ui-sm-6 t">Atendimento: </div>
+                <div class="ui-g-10 ui-sm-6 t"><b>{{car.nratendimento}}</b></div>
+                   <div class="ui-g-2 ui-sm-6 t">Data Entrada: </div>
+                   <div class="ui-g-10 ui-sm-6 t"><b>{{car.dtentrada}}</b></div>
+
+               
+
+
+                   <div class="ui-g-2 ui-sm-6 t">Municipio: </div>
+                   <div class="ui-g-10 ui-sm-6 t"><b>{{car.municipio}}</b></div>
+                   <div class="ui-g-2 ui-sm-6 t">Médico: </div>
+                   <div class="ui-g-10 ui-sm-6 t"><b>{{car.medico}}</b></div>
+                   
+                   <div class="ui-g-2 ui-sm-6 t">Convênio: </div>
+                   <div class="ui-g-10 ui-sm-6 t"><b>{{car.convenio}}</b></div>
+
+                   <div class="ui-g-2 ui-sm-6 t">Triagem: </div>
+                   <div class="ui-g-10 ui-sm-6 t"><b>{{car.tpespeenf}}</b></div>
+
+                   <div class="ui-g-2 ui-sm-6 t"> Medico: </div>
+                   <div class="ui-g-10 ui-sm-6 t"><b>{{car.tpesomedico}}</b></div>
+
+                   
+                   <div class="ui-g-2 ui-sm-6 t">Tempo - Total: </div>
+                   <div class="ui-g-10 ui-sm-6 t"   ><b>{{car.tptotal}}</b></div>
+                
+
+                  
+               </div>
+           </div>
+           <div style="align-self: center;" class="ui-g-12 ui-md-1 search-icon">
+            
+           </div>
+       </div>
+   </ng-template>
+   <ng-template let-car pTemplate="gridItem">
+       <div style="padding:.5em"  class="ui-g-12 ui-md-3">
+     
+           <p-panel [header]="car.desctipo" [style]="{'text-align':'center'}">
+               <img src="assets/img/{{car.ie_sexo}}.png"  width="60">
+               <div class="car-detail t">{{car.paciente}}</div>
+               <div class="car-detail t">{{car.municipio}}</div>
+               <hr class="ui-widget-content" style="border-top:0">
+             
+               
+           </p-panel  >
+    
+       </div>
+   </ng-template>
+</p-dataView>
+
+<div *ngIf="show">
+
+   <p-progressSpinner    [style]="{ width:'100px',
+     height:'100px',  position:'absolute', top:'40%', left:'40%'}" fill="#EEEEEE" strokeWidth="4" animationDuration=".5s">
+   </p-progressSpinner>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="container">
+
+    <div><h1>Painel Emergência</h1></div>
+
+    <div class="ui-g">
+      <div class="ui-g-12 ui-fluid">
+    <li >Pacientes aguardando atendimento médico: {{total}}</li>
+    <li >Pacientes em atendimento no PS: {{totalat}}</li>
+    <li>Atualização: {{atualizacao}}</li>
+  </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12 ui-fluid">
+
+        <p-dataTable [value]="listaStatus"  [responsive] ="true" emptyMessage=" ">
+            <p-header>Pacientes por Status (online)</p-header>
+            <p-column field="status" header="Status"  ></p-column>
+            <p-column field="total" header="Pacientes"  ></p-column>
+            
+          
+
+
+
+
+
+
+        </p-dataTable>
+
+      </div>
+      </div>
+      <div style="padding-top: 20px;">
+        <hr class="linha">
+      </div>
+   <div class="ui-g">
+      <div class="ui-g-12 ui-fluid">
+
+        <p-dataTable [value]="lista"  [responsive] ="true" emptyMessage=" ">
+            <p-header>Média de tempo (última hora)</p-header>
+            <p-column field="ds_triagem" header="Classificação"  ></p-column>
+            <p-column field="tp_triagem" header="Tempo espera triagem"  ></p-column>
+            <p-column field="tp_medico" header="Tempo espera consulta"   ></p-column>
+
+
+
+
+
+
+        </p-dataTable>
+
+      </div>
+      </div>
+      <div style="padding-top: 20px;">
+        <hr class="linha">
+
+        <div class="ui-g">
+        <div class="ui-g-12 ui-fluid">
+
+          <p-dataTable [value]="lista2"  [responsive] ="true" emptyMessage=" ">
+              <p-header>Média de tempo (últimas 24h)</p-header>
+              <p-column field="ds_triagem" header="Classificação"  ></p-column>
+              <p-column field="tp_triagem" header="Tempo espera triagem"  ></p-column>
+              <p-column field="tp_medico" header="Tempo espera consulta"   ></p-column>
+              <p-column field="qt_espera_total" header="Tempo total de atendimento"  ></p-column>
+              <p-column field="total_cor" header="Pacientes em atendimento"   ></p-column>
+
+
+
+          </p-dataTable>
+
+        </div>
+        </div>
+      </div>
+      <div *ngIf="show">
+      <p-progressSpinner
+      [style]="{ width:'100px',
+      height:'100px',  position:'absolute', top:'40%', left:'40%'}" fill="#EEEEEE" strokeWidth="4" animationDuration=".5s">
+    </p-progressSpinner>
+    </div>
+  </div>

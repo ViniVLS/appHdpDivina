@@ -1,0 +1,67 @@
+<div class="container">
+
+  <div><h1>Solicitações</h1></div>
+<div class="ui-g">
+<div class="ui-g-12 ui-fluid">
+
+    <p-dataTable [value]="solicitacoes"  [responsive] ="true" emptyMessage="Nenhuma solicitação encontrada">
+
+        <p-column field="dt_liberacao" header="Data" bodyStyleClass=""  ></p-column>
+          <p-column field="atendimento" header="Atendimento"></p-column>
+          <p-column field="nm_paciente" header="Paciente"></p-column>
+          <p-column field="ds_convenio" header="convênio"></p-column>
+          <p-column field="medico" header="Solicitante"></p-column>
+          <p-column field="ds_tipo_parecer" header="Tipo"></p-column>
+          <p-column styleClass="col-acoes">
+            <ng-template let-lanc="rowData" pTemplate="body">
+
+              <a pButton  icon="fa fa-search-plus" pTooltip="Detalhar"
+                tooltipPosition="top"
+               (click)="aval(lanc.id)"
+                                ></a>
+            </ng-template>
+        </p-column>
+
+      </p-dataTable>
+      <div class="ui-g">
+      <div class="ui-g-12 ui-fluid">
+      <p-dialog [(visible)]="displayd"
+      [positionTop]="40" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}" [minY]="70"
+      [maximizable]="true" [baseZIndex]="10000">
+
+          <p-editor  [style]="{'font-size':'15px'}" resizable="true" styleClass="testep" [(ngModel)]="ds_motivo_consulta"  [readonly]="true"
+          >
+              <p-header>
+                {{this.ds_tipo_parecer}}
+              </p-header>
+
+            </p-editor>
+
+            <p-footer>
+              <button type="button" pButton  (click)="displayd=false" label="fechar"></button>
+              </p-footer>
+      </p-dialog>
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div *ngIf="show">
+
+<p-progressSpinner    [style]="{ width:'100px',
+  height:'100px',  position:'absolute', top:'40%', left:'40%'}" fill="#EEEEEE" strokeWidth="4" animationDuration=".5s"></p-progressSpinner>
+ </div>
+

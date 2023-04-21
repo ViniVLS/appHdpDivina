@@ -1,0 +1,9 @@
+.senha{
+    border-width: 2px;
+  border-style: dashed;
+  border-color: #f00;
+  margin-left: 5px;
+}
+.dt{
+    font-size: 30px;
+}

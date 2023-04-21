@@ -1,0 +1,67 @@
+
+ <nav class="navbarx">
+    <div><span class="titulo">REDE DE SAÚDE DIVINA PROVIDÊNCIA</span></div>
+  <div class="sair" (click)="entrar()">
+      <span class="sairx">Entrar</span>
+    <a href="javascript:;"  >
+    <i class="fa fa-sign-in fa-2x" style="color: #fff"></i></a>
+
+    </div>
+
+
+  </nav>
+<div class="container">
+
+  <div><h1>Solicitação</h1></div>
+  <div class="ui-g">
+    <div class="ui-g-12 ui-fluid">
+      <span>Solicitante:</span>
+      <span>{{sol.medico}}</span>
+      </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-12 ui-fluid">
+          <span>Solicitado:</span>
+          <span>{{sol.cd_pessoa_parecer}}</span>
+          </div>
+          </div>
+      <div class="ui-g">
+          <div class="ui-g-12 ui-md-3 ui-fluid">
+              <span>Atendimento:</span>
+            <span>{{sol.atendimento}}</span>
+          </div>
+          <div class="ui-g-12 ui-md-9 ui-fluid">
+            <span>Paciente:</span>
+          <span>{{sol.nm_paciente}}</span>
+        </div>
+            <div class="ui-g-12 ui-md-3 ui-fluid">
+            <span>Data:</span>
+            <span>{{sol.dt_liberacao}}</span>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-fluid">
+              <span>Convênio:</span>
+              <span>{{sol.ds_convenio}}</span>
+              </div>
+              <div class="ui-g-12 ui-md-6 ui-fluid">
+                <span>Unidade:</span>
+                <span>{{sol.ds_setor_leito}}</span>
+                </div>
+          </div>
+            </div>
+<div class="ui-g">
+<div class="ui-g-12 ui-fluid">
+    <p-editor  [style]="{'font-size':'15px'}" styleClass="testep" [(ngModel)]="sol.ds_motivo_consulta"  [readonly]="true"   >
+        <p-header>
+          <span>{{sol.ds_tipo_parecer}}</span>
+        </p-header>
+      </p-editor>
+
+
+</div>
+<div *ngIf="show">
+
+  <p-progressSpinner    [style]="{ width:'100px',
+    height:'100px',  position:'absolute', top:'40%', left:'40%'}" fill="#EEEEEE" strokeWidth="4" animationDuration=".5s"></p-progressSpinner>
+   </div>
+</div>
+

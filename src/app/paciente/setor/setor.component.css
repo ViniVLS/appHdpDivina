@@ -1,0 +1,11 @@
+.yyy{
+  border-color: inherit;
+  box-sizing: border-box;
+  padding: .25em .5em;
+  border-width: 1px;
+  border-style: solid;
+  background-color:yellow;
+  border-color: gold;
+  color: black;
+  margin-top: 10px;
+}

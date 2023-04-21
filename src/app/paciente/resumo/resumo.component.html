@@ -1,0 +1,84 @@
+<div class="container">
+
+  <div class="ui-g ui-fluid">
+    <div class="ui-g-12 centro">
+   <span class="t">{{resumop.nm_Paciente}}</span>
+
+<div class="ui-g-12 ">
+<label >{{resumop.ds_IDADE}}</label>
+</div>
+<div class="ui-g-12 ui-fluid">
+  <div >
+  <label >Data Internação</label>
+</div>
+<div>
+  <label >{{resumop.dt_ENTRADA}}</label>
+</div>
+</div>
+<div class="ui-g-12 ">
+  <label >Cid</label>
+  <div>
+  <label >{{resumop.cd_CID_PRINCIPAL}}</label>
+  </div>
+  </div>
+<div class="ui-g-12">
+  <div >
+  <label >leito</label>
+</div>
+<div>
+  <label>{{resumop.unidade}}</label>
+</div>
+</div>
+<div class="ui-g-12 ">
+<label >Atendimento</label>
+<div>
+<label >{{resumop.atendimento}}</label>
+</div>
+</div>
+<div class="ui-g-12 ">
+  <label >Previsão de alta</label>
+  <div>
+  <label >{{resumop.dt_PREVISTO_ALTA}}</label>
+  </div>
+  </div>
+<div class="ui-g-12 ">
+  <div>
+<label >Convênio</label>
+</div>
+<div>
+<label>{{resumop.ds_CONVENIO}}</label>
+</div>
+</div>
+<div class="ui-g-8 ui-md-4 ui-lg-4"  >
+    <div *ngIf="!(resumop.laudo ===null)">
+  <label >Exames</label>
+  </div>
+  <div *ngIf="!(resumop.laudo ===null)"   >
+  <a pButton  icon="fa fa-search-plus"
+  (click)="teste()" >
+  </a>
+  </div>
+  <div  class="xxx" *ngIf="!(resumop.ds_risco ==='0')" >
+
+      <label>Risco</label>
+      <div>
+      <label>{{resumop.ds_risco}}</label>
+    </div>
+      </div>
+<div class="ui-g-12 "  ></div>
+<div>
+  <label>Última evolução médica</label>
+  </div>
+<div>
+<label>{{resumop.evolucao}}</label>
+</div>
+</div>
+</div>
+</div>
+<div *ngIf="show">
+
+  <p-progressSpinner    [style]="{ width:'100px',
+    height:'100px',  position:'absolute', top:'40%', left:'40%'}" fill="#EEEEEE" strokeWidth="4" animationDuration=".5s"></p-progressSpinner>
+   </div>
+
+</div>

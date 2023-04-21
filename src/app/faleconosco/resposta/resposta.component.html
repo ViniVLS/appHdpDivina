@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div><h1>Comunicação</h1></div>
+
+
+    <div class="ui-g">
+
+
+        <div class="ui-g-12 ui-fluid"  >
+
+            <p-editor [(ngModel)]="text" [style]="{'font-size':'15px'}"    >
+                <p-header>
+                  Resposta<br>
+                    <span class="ql-formats" *ngIf="temPermissao('ROLE_CRM')">
+                        <button class="ql-bold" aria-label="Bold"></button>
+                        <button class="ql-italic" aria-label="Italic"></button>
+                        <button class="ql-underline" aria-label="Underline"></button>
+                        <button aria-label="Ordered List" class="ql-list" value="ordered" type="button"></button>
+
+                    </span>
+                </p-header>
+              </p-editor>
+              <button pButton type="submit"  *ngIf="temPermissao('ROLE_CRM')" (click)="enviar()" label="Enviar resposta"  [disabled]="habilita"></button>
+
+              </div>
+            </div>
+            <div class="ui-g">
+
+
+                <div class="ui-g-12 ui-fluid">
+              <p-editor  [style]="{'font-size':'15px'}" [(ngModel)]="textop"  [readonly]="true" >
+                  <p-header>
+                    Pergunta
+                  </p-header>
+                </p-editor>
+              </div>
+            </div>
+  <div>
+
+  </div>
+
+
+
+
+
+  </div>

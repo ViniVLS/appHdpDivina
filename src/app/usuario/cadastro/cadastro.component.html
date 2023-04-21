@@ -1,0 +1,68 @@
+
+<div class="container">
+
+    <div><h1>Cadastro Usuário</h1></div>
+  <div class="ui-g">
+  <div class="ui-g-12 ui-md-4 ">
+
+      <div class="ui-inputgroup">
+
+          <input name="id" [(ngModel)]="cadastro.id"  type="number" pInputText ngModel placeholder="Cód Pessoa">
+          <button pButton type="button" icon="fa fa-search-plus" label="Buscar" (click)="buscar()" ></button>
+      </div>
+
+  </div>
+
+  </div>
+  <div class="ui-g ui-fluid">
+     
+          <div class="ui-g-12 ui-md-6" >
+              <span>Cpf</span>
+              <input name="cpf" [(ngModel)]="cadastro.cpf" [disabled] ="true"  type="text" pInputText  ngModel/>
+              </div>
+
+              <div class="ui-g-12 ui-md-2" >
+                  <span>CRM</span>
+                  <input name="crm" [(ngModel)]="cadastro.crm"  [disabled] ="true" type="text" pInputText ngModel/>
+                  </div>
+
+                  <div class="ui-g-12 ui-md-7" >
+                      <span>E-mail/Usuário</span>
+                      <input name="email" [(ngModel)]="cadastro.email"  type="text" pInputText ngModel/>
+                      </div>
+
+                      <div class="ui-g-12 ui-md-6" >
+                        <span>Nome app</span>
+                        <input name="usuario" [(ngModel)]="cadastro.nome"  type="text" pInputText ngModel/>
+                        </div>
+                        <div class="ui-g-12 ui-md-2" >
+                          <span>Último login</span>
+                          <input name="login" [(ngModel)]="cadastro.dtlogin"  type="text" pInputText ngModel/>
+                          </div>
+                     
+
+
+
+  </div>                     
+                        <div class="ui-g" style="width:250px;margin-bottom:10px">
+                       
+                          <div class="ui-g-12">
+                          <p-checkbox binary="true" value="New York" label="Gerar nova senha" [(ngModel)]="cadastro.expirasenha" inputId="ny">
+
+                        </p-checkbox></div>
+                        
+                    </div>
+                      
+                       
+                        <div class="ui-g-12 ui-md-12" *ngIf="cadastro.cpf != null">
+                          <button pButton type="button"  label="Atualizar" (click)="cadastrar()" ></button>
+                        </div>
+                    
+                        <div class="ui-g-10 ui-md-4 senha"  *ngIf="senha != ''">
+                            <span class="dt">{{senha}}</span>
+                          </div>
+
+
+
+  </div>
+

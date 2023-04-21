@@ -1,0 +1,27 @@
+<div class="container">
+  <div><h1>Agenda</h1></div>
+  <div class="ui-g">
+    <div class="ui-g-12">
+        <p-calendar [(ngModel)]="dt" showButtonBar="true" [showIcon]="true" [yearNavigator]="true" yearRange="2010:2030" dateFormat="dd/mm/yy"
+        [locale]="pt_BR"   (onSelect)="consultaAgenda()"></p-calendar>
+    </div>
+
+    <div class="ui-g-12 ui-fluid">
+
+        <p-dataTable [value]="agenda"  [responsive]="true" [loading]="lendo"
+        loadingIcon="fa-circle-o-notch fa-3x"  emptyMessage="Sem agenda para o dia">
+            <p-column field="data_inicio" header="Horário"></p-column>
+            <p-column field="tipo" header="Tipo"></p-column>
+            <p-column field="nm_PACIENTE" header="Paciente"></p-column>
+            <p-column field="convenio" header="Convênio"></p-column>
+            <p-column field="proc" header="Proc. Principal"></p-column>
+            <p-column field="status" header="Autorização"></p-column>
+
+        </p-dataTable>
+
+    </div>
+
+  </div>
+
+
+</div>

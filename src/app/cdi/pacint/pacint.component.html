@@ -1,0 +1,78 @@
+<div class="container">
+
+    <p-dataView #dv [value]="car" [paginator]="true" [rows]="15" paginatorPosition="both" filterBy="nm_paciente,ds_SETOR_ATENDIMENTO"
+     emptyMessage ="{{x}}"  >
+    <p-header>
+           <span>Pacientes em atendimento</span>
+        <div class="ui-helper-clearfix">
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-4">
+                   
+                </div>
+                <div class="ui-g-6 ui-md-4 filter-container">
+                    <div style="position:relative">
+                        <input type="search" pInputText placeholder="Buscar" (keyup)="dv.filter($event.target.value)">
+                    </div>
+                </div>
+                <div class="ui-g-6 ui-md-2" style="text-align:right">
+                    <header> <p-dataViewLayoutOptions ></p-dataViewLayoutOptions></header>
+                       
+                    
+
+                </div>
+            </div>
+        </div>
+    </p-header>
+    <ng-template let-car pTemplate="listItem">
+        <div class="ui-g" style="padding: 1em;border-bottom: 1px solid #d9d9d9">
+            <div class="ui-g-12 ui-md-3" style="text-align:center">
+                <img src="assets/img/{{car.ie_SEXO}}.png" width="60">
+                
+            </div>
+            <div class="ui-g-12 ui-md-8 car-details">
+                <div class="ui-g">
+                    <div class="ui-g-2 ui-sm-6 t">Nome: </div>
+                    <div class="ui-g-10 ui-sm-6 t"><b>{{car.nm_paciente}}</b></div>
+
+                    <div class="ui-g-2 ui-sm-6 t">Setor: </div>
+                    <div class="ui-g-10 ui-sm-6 t"><b>{{car.ds_SETOR_ATENDIMENTO}}</b></div>
+
+                    <div class="ui-g-2 ui-sm-6 t">Leito: </div>
+                    <div class="ui-g-10 ui-sm-6 t"><b>{{car.cd_UNIDADE}}</b></div>
+
+                   
+                </div>
+            </div>
+            <div style="align-self: center;" class="ui-g-12 ui-md-1 search-icon">
+               <header><a pButton style="margin-left: 40%;" icon="fa fa fa-search-plus" pTooltip="Detalhar"
+                  tooltipPosition="top"
+                 (click)="teste(car.nr_atendimento)"
+                 
+                 ></a></header> 
+            </div>
+        </div>
+    </ng-template>
+    <ng-template let-car pTemplate="gridItem">
+        <div style="padding:.5em" class="ui-g-12 ui-md-3">
+            <p-panel [header]="car.nm_paciente" [style]="{'text-align':'center'}">
+                <img src="assets/img/{{car.ie_SEXO}}.png" width="60">
+                <div class="car-detail t">{{car.ds_SETOR_ATENDIMENTO}} - {{car.cd_UNIDADE}}</div>
+                <hr class="ui-widget-content" style="border-top:0">
+                <header><a pButton  icon="fa fa fa-search-plus" pTooltip="Detalhar"
+                tooltipPosition="top"
+                (click)="teste(car.nr_atendimento)"
+               
+               ></a></header>
+                
+            </p-panel>
+        </div>
+    </ng-template>
+</p-dataView>
+
+<div *ngIf="show">
+
+    <p-progressSpinner    [style]="{ width:'100px',
+      height:'100px',  position:'absolute', top:'40%', left:'40%'}" fill="#EEEEEE" strokeWidth="4" animationDuration=".5s">
+    </p-progressSpinner>
+     </div>
+</div>

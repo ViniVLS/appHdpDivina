@@ -1,0 +1,56 @@
+<div class="container">
+    <div><h1>Registro Treinamento</h1></div>
+    <div class="ui-g">
+    <div class="ui-g-12 ui-md-4 ">
+  
+        <div class="ui-inputgroup">
+  
+            <input name="evento"   type="number" pInputText  placeholder="Cód Evento" [(ngModel)]="evento">
+            <button pButton type="button" icon="fa fa-search-plus" label="Buscar"    ></button>
+        </div>
+  
+    </div>
+  
+    </div>
+    <div class="ui-g ui-fluid">
+       
+            <div class="ui-g-12 ui-md-6" >
+                <span>Evento</span>
+                <input name="Evento"  [disabled] ="true"  type="text" pInputText    />
+                </div>
+  
+                
+                       
+  
+  
+  
+    </div>                     
+                          
+                        
+                         
+                          <div class="ui-g-12 ui-md-12" >
+                            <div class="ui-inputgroup">
+  
+                              <input name="idc"   type="number" pInputText  placeholder="Matricula">
+                              <button pButton type="button" icon="fa fa-search-plus" label="Adicionar"  ></button>
+                          </div>
+                    
+                      </div>
+                         
+                      
+    <div style="padding-top: 50px;"><h1>Colaboradores</h1></div>
+    <div class="ui-g">
+    <div class="ui-g-12 ui-fluid">
+  
+        <p-dataTable  [responsive] ="true" emptyMessage="Nenhum inscrito"  >
+            <p-column field="pesso_fisica.numero_cracha"  header="Cracha"  ></p-column>
+            <p-column field="pesso_fisica.cd_pessoa_fisica"  header="Cód Pessoa"  ></p-column>   
+            <p-column field="pesso_fisica.nome"  header="Nome"  ></p-column> 
+          </p-dataTable>
+  
+    </div>
+  
+    </div>
+  
+  
+</div>
